@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currículum Profesional - Psicología UVY Valladolid</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --acentos: #d85a8d;
+      --texto: #5d4d5d;
+      --fondo-rosa: #ffebf2;
+      --lila-soft: #f3f0ff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: #ffd6e7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .contenedor-cv {
+      background: white;
+      width: 95%;
+      max-width: 1100px; /* Más ancho para llenar la pantalla */
+      border-radius: 40px;
+      display: grid;
+      grid-template-columns: 380px 1fr; /* Proporción ideal */
+      overflow: hidden;
+      box-shadow: 0 15px 45px rgba(0,0,0,0.15);
+      margin: 30px;
+    }
+
+    /* Columna Lateral */
+    .col-lateral {
+      background-color: #fff9fb;
+      padding: 50px 40px;
+      display: flex;
+      flex-direction: column;
+      border-right: 2px solid var(--fondo-rosa);
+    }
+
+    .foto-perfil {
+      width: 100%;
+      aspect-ratio: 1/1;
+      border-radius: 40px;
+      border: 8px solid var(--fondo-rosa);
+      object-fit: cover;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 20px rgba(216, 90, 141, 0.1);
+    }
+
+    .seccion-side { margin-bottom: 35px; }
+    .seccion-side h2 {
+      font-size: 1rem;
+      color: var(--acentos);
+      border-bottom: 2px solid var(--fondo-rosa);
+      padding-bottom: 8px;
+      margin-bottom: 15px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .desc-perfil {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--texto);
+      text-align: justify;
+      font-style: italic;
+    }
+
+    /* Columna Principal */
+    .col-principal {
+      padding: 60px;
+      background: white;
+    }
+
+    .nombre-top h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--acentos);
+      margin: 0;
+      font-style: italic;
+    }
+
+    .nombre-top p {
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: #7a5ba0;
+      font-weight: 600;
+      margin: 5px 0 35px 0;
+      font-size: 1.1rem;
+    }
+
+    .grid-contacto {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      font-size: 0.9rem;
+      color: var(--texto);
+      margin-bottom: 45px;
+      background: var(--fondo-rosa);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .seccion-main { margin-top: 40px; }
+    .seccion-main h2 {
+      font-size: 1.3rem;
+      color: var(--acentos);
+      border-bottom: 3px solid var(--fondo-rosa);
+      padding-bottom: 10px;
+      margin-bottom: 25px;
+    }
+
+    .bloque-cv { margin-bottom: 30px; }
+    .bloque-header { display: flex; justify-content: space-between; font-weight: 600; color: #7a5ba0; font-size: 1rem; }
+    .bloque-sub { font-size: 0.9rem; color: #888; margin: 5px 0; display: block; }
+    .bloque-desc { font-size: 0.9rem; color: var(--texto); line-height: 1.7; }
+
+    .skills-contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-pill {
+      background: white;
+      border: 1.5px solid var(--acentos);
+      padding: 8px 18px;
+      border-radius: 25px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--texto);
+      transition: 0.3s;
+    }
+
+    .skill-pill:hover { background: var(--fondo-rosa); }
+
+    @media (max-width: 900px) {
+      .contenedor-cv { grid-template-columns: 1fr; }
+      .col-lateral { border-right: none; border-bottom: 2px solid var(--fondo-rosa); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="contenedor-cv">
+    <aside class="col-lateral">
+      <img src="fotoCV.jpeg" alt="Brisa" class="foto-perfil">
+      
+      <div class="seccion-side">
+        <h2>SOBRE MÍ</h2>
+        <p class="desc-perfil">
+          Psicóloga comprometida con la excelencia humana, egresada de la Universidad de Valladolid Yucatán (UVY). Mi formación combina la sensibilidad clínica con una visión ética, orientada a brindar apoyo integral en el oriente del estado.
+        </p>
+      </div>
+
+      <div class="seccion-side">
+        <h2>IDIOMAS</h2>
+        <p style="font-size: 0.9rem; line-height: 2;">
+          🌸 Español (Nativo)<br>
+          🌸 Inglés (B2 Intermedio)<br>
+          🌸 Lengua Maya (Básico)
+        </p>
+      </div>
+
+      <div class="seccion-side">
+        <h2>ESTADÍSTICA</h2>
+        <p style="font-size: 0.9rem;">Manejo avanzado de pruebas psicométricas y análisis de datos clínicos.</p>
+      </div>
+    </aside>
+
+    <main class="col-principal">
+      <div class="nombre-top">
+        <h1>Brisa Fadily Ucan Castillo</h1>
+        <p>Licenciada en Psicología</p>
+      </div>
+
+      <div class="grid-contacto">
+        <span>📍 Valladolid, Yucatán</span>
+        <span>📞 +52 985 106 8864</span>
+        <span>📧 brisafadily1@gmail.com</span>
+        <
+      </div>
+
+      <div class="seccion-main">
+        <h2>FORMACIÓN PROFESIONAL</h2>
+        <div class="bloque-cv">
+          <div class="bloque-header"><span>Univ. de Valladolid Yucatán (UVY)</span><span>Graduada</span></div>
+          <span class="bloque-sub">Licenciatura en Psicología Clínica</span>
+          <p class="bloque-desc">Formación académica centrada en procesos cognitivos, desarrollo humano y salud mental con pertinencia cultural en la región oriente.</p>
+        </div>
+      </div>
+
+      <div class="seccion-main">
+        <h2>TRAYECTORIA</h2>
+        <div class="bloque-cv">
+          <div class="bloque-header"><span>Clínica de Apoyo Familiar</span><span>2025 - Presente</span></div>
+          <span class="bloque-sub">Consultora Psicológica</span>
+          <p class="bloque-desc">Atención de casos clínicos, intervención en crisis y diseño de programas de bienestar para la comunidad vallisoletana.</p>
+        </div>
+        <div class="bloque-cv">
+          <div class="bloque-header"><span>Prácticas Profesionales</span><span>2024</span></div>
+          <span class="bloque-sub">Hospital General de Valladolid</span>
+          <p class="bloque-desc">Asistencia en el área de salud mental, aplicación de evaluaciones diagnósticas y acompañamiento terapéutico inicial.</p>
+        </div>
+      </div>
+
+      <div class="seccion-main">
+        <h2>COMPETENCIAS</h2>
+        <div class="skills-contenedor">
+          <span class="skill-pill">Evaluación Clínica</span>
+          <span class="skill-pill">Terapia Cognitiva</span>
+          <span class="skill-pill">Empatía Activa</span>
+          <span class="skill-pill">Ética Profesional</span>
+          <span class="skill-pill">Trabajo Comunitario</span>
+        </div>
+      </div>
+    </main>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UHAW - Brisa - 404</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --foto-ariana: url('ar fondo.jpg');
+            --fondo-rosa-pastel: #ffebf2;
+            --rosa-fuerte: #ffb1d1;
+            --lila-soft: #e9e2f6;
+            --texto: #5d4d5d;
+        }
+
+        body { 
+            background-color: var(--fondo-rosa-pastel);
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            color: var(--texto);
+        }
+
+        /* Menú Superior */
+        .navbar-custom { 
+            background-color: var(--rosa-fuerte); 
+            padding: 15px; 
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-bottom: 3px solid white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-link-custom { 
+            background-color: white; 
+            color: var(--texto) !important; 
+            padding: 8px 18px; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .nav-link-custom:hover { background-color: var(--lila-soft); }
+
+        /* Contenedor de Contenido */
+        .main-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 5vh 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Cuadro de Texto / Iframe */
+        .welcome-box {
+            background-color: white;
+            padding: 20px;
+            border-radius: 40px;
+            border: 3px solid var(--lila-soft);
+            box-shadow: 10px 10px 0px var(--rosa-fuerte);
+            width: 100%;
+            max-width: 600px;
+            min-height: 450px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            transition: max-width 0.5s ease;
+        }
+
+        /* Estilo para cuando el iframe está activo (ocupa más espacio) */
+        .welcome-box.full-width {
+            max-width: 90%;
+        }
+
+        /* Cuadro de Imagen (Ariana) */
+        .image-box {
+            width: 350px;
+            height: 450px;
+            background-image: var(--foto-ariana);
+            background-size: cover;
+            background-position: center;
+            border-radius: 40px;
+            border: 8px solid white;
+            box-shadow: 10px 10px 0px var(--lila-soft);
+            transition: 0.3s;
+        }
+
+        /* Clase para ocultar la foto */
+        .hidden { display: none !important; }
+
+        h1 { 
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-style: italic;
+            color: #d85a8d;
+            text-align: center;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            display: none; /* Oculto al inicio */
+        }
+
+        #inicio-estatico { text-align: center; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar-custom">
+        <a class="nav-link-custom" onclick="irAInicio()">Inicio</a>
+        <a class="nav-link-custom" onclick="cargarPagina('Página1/index.html')">Pag 1</a>
+        <a class="nav-link-custom" onclick="cargarPagina('Página2/index.html')">Pag 2</a>
+        <a class="nav-link-custom" onclick="cargarPagina('Página3/index.html')">Pag 3</a>
+        <a class="nav-link-custom" onclick="cargarPagina('Página4/index.html')">Pag 4</a>
+        <a class="nav-link-custom" onclick="cargarPagina('host/index.html')">Host Local</a>
+        <a class="nav-link-custom" onclick="cargarPagina('estatica/_index.html')">Estática</a>
+        <a class="nav-link-custom" onclick="cargarPagina('curriculum/index.html')">Curriculum</a>
+    </nav>
+
+    <div class="container">
+        <div class="main-container">
+            <!-- Cuadro Blanco -->
+            <div class="welcome-box" id="miCuadro">
+                
+                <!-- CONTENIDO DE INICIO (ESTÁTICO) -->
+                <div id="inicio-estatico">
+                    <h1>Bienvenidos</h1>
+                    <h2 style="letter-spacing: 5px; text-transform: uppercase; font-size: 1.5rem; color: #7a5ba0;">Brisa</h2>
+                    <div style="margin-top: 20px; font-size: 0.9rem; line-height: 1.6;">
+                        <p>Módulo: <strong>Herramientas Web</strong></p>
+                        <p>Grupo: <strong>404</strong></p>
+                        <p>Docente: <strong>Carlos Daniel Ríos Rivera</strong></p>
+                    </div>
+                </div>
+
+                <!-- EL IFRAME PARA LAS OTRAS PÁGINAS -->
+                <iframe id="miIframe"></iframe>
+
+            </div>
+
+            <!-- Foto de Ariana -->
+            <div class="image-box" id="fotoAriana"></div>
+        </div>
+    </div>
+
+    <script>
+        const inicio = document.getElementById('inicio-estatico');
+        const iframe = document.getElementById('miIframe');
+        const foto = document.getElementById('fotoAriana');
+        const cuadro = document.getElementById('miCuadro');
+
+        function cargarPagina(url) {
+            // 1. Ocultar el texto de inicio y la foto de Ariana
+            inicio.style.display = 'none';
+            foto.classList.add('hidden');
+            
+            // 2. Hacer el cuadro blanco más ancho para ver bien las páginas
+            cuadro.classList.add('full-width');
+
+            // 3. Mostrar el iframe y cargar la URL
+            iframe.style.display = 'block';
+            iframe.src = url;
+        }
+
+        function irAInicio() {
+            // 1. Mostrar texto de inicio y foto de Ariana
+            inicio.style.display = 'block';
+            foto.classList.remove('hidden');
+            
+            // 2. Regresar el cuadro a su tamaño original
+            cuadro.classList.remove('full-width');
+
+            // 3. Ocultar el iframe
+            iframe.style.display = 'none';
+            iframe.src = "";
+        }
+    </script>
+
+</body>
+</html>
