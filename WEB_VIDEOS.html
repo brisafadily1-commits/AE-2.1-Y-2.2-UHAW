@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>WEB VIDEOS</title>
+    <style>
+        /* Eliminamos márgenes para que pegue a las orillas */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%; 
+            background-color: orange;
+            font-family: 'Comic Sans MS', Arial;
+            overflow: hidden; /* Evita que salgan dos barras de desplazamiento */
+        }
+        
+        /* Contenedor que ocupa toda la pantalla */
+        .pantalla-completa {
+            display: flex;
+            width: 100%;
+            height: 100vh; /* 100% del alto de la ventana */
+        }
+
+        /* Columna de los links: se queda fija a la izquierda */
+        .columna-links {
+            width: 250px; /* Ancho fijo para que no se mueva */
+            padding: 20px;
+            background-color: orange;
+            box-sizing: border-box;
+            border-right: 2px solid black;
+        }
+
+        /* Columna del video/web: abarca TODO el resto */
+        .columna-web {
+            flex-grow: 1; /* Esto hace que el cuadro gris use todo el espacio que sobra */
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%; /* Ocupa el 100% del alto de su columna */
+            border: none;
+            background-color: #cccccc;
+        }
+
+        /* Estilos de texto más grandes */
+        h3 { font-size: 1.4em; margin-bottom: 5px; }
+        a { color: black; text-decoration: none; font-weight: bold; font-size: 1.1em; }
+        a:hover { text-decoration: underline; }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 15px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="pantalla-completa">
+        
+        <div class="columna-links">
+            <h3>Pagina 1</h3>
+            <ol>
+                <li><a href="web1.html" target="central">Link 1</a></li>
+            </ol>
+
+            <h3>Pagina 2</h3>
+            <ol>
+                <li><a href="web2.html" target="central">Link 2</a></li>
+            </ol>
+
+            <h3>Pagina 3</h3>
+            <ol>
+                <li><a href="web3.html" target="central">Link 3</a></li>
+            </ol>
+        </div>
+
+        <div class="columna-web">
+            <iframe name="central" src="about:blank"></iframe>
+        </div>
+
+    </div>
+
+</body>
+</html>
