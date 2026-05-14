@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Mis 8 Evidencias - Curso</title>
+    <style>
+        body { 
+            /* Violeta Lavanda Pastel (Nuevo color) */
+            background-color: #E1BEE7; 
+            font-family: 'Verdana', sans-serif; 
+            margin: 0;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Contenedor tipo Tabla de tu captura */
+        .tabla-evidencias {
+            background-color: #F3E5F5; /* Un lila aún más clarito para el fondo interno */
+            border: 3px solid #4A148C; /* Borde morado oscuro para que resalte */
+            width: 95%;
+            max-width: 900px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* Título de la sección */
+        .titulo-seccion {
+            background-color: #BA68C8; /* Morado medio */
+            color: white;
+            border-bottom: 3px solid #4A148C;
+            text-align: center;
+            padding: 15px;
+            font-size: 2em;
+            font-family: 'Impact', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        /* Grid de 2 columnas para las 8 evidencias */
+        .grid-imagenes {
+            display: grid;
+            grid-template-columns: 1fr 1fr; 
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Cuadro de cada evidencia */
+        .item-evidencia {
+            background-color: white;
+            border: 2px solid #4A148C;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .item-evidencia:hover {
+            transform: scale(1.02); /* Efecto de que se acerca un poquito */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .item-evidencia img {
+            width: 100%; 
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .item-evidencia p {
+            margin-top: 10px;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #4A148C;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabla-evidencias">
+        <div class="titulo-seccion">Evidencias del Curso</div>
+
+        <div class="grid-imagenes">
+            
+            <div class="item-evidencia">
+                <img src="evaluacion1.png" alt="Evidencia 1">
+                <p>EVALUACIÓN 1 </p>
+            </div>
+
+            <div class="item-evidencia">
+                <img src="evaluacion2.png" alt="Evidencia 2">
+                <p>EVALUACIÓN 2 </p>
+            </div>
+
+            <div class="item-evidencia">
+                <img src="evaluacion3.png" alt="Evidencia 3">
+                <p>EVALUACIÓN 3</p>
+            </div>
+
+            <div class="item-evidencia">
+                <img src="evaluacion4.png" alt="Evidencia 4">
+                <p>EVALUACIÓN 4</p>
+            </div>
+
+            <div class="item-evidencia">
+                <img src="evaluacion5.png" alt="Evidencia 5">
+                <p>EVALUACIÓN 5</p>
+            </div>
+
+            <div class="item-evidencia">
+                <img src="evaluacion6.png" alt="Evidencia 6">
+                <p>EVALUACIÓN 6</p>
+            </div>
+
+            <div class="item-evidencia">
+                <img src="evaluacion7.png" alt="Evidencia 7">
+                <p>EVALUACIÓN 7</p>
+            </div>
+
+            <div class="item-evidencia">
+                <img src="evaluacion8.png" alt="Evidencia 8">
+                <p>EVALUACIÓN 8</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Divisiones - Libreta de Tecnología</title>
+    <style>
+        /* Estilos Base */
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: white; color: #333; }
+
+        /* Banner Rojo Pastel (Igual al index_t3) */
+        .header-pastel {
+            background-color: #ff9999;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid #ff8080;
+        }
+        .header-pastel h1 { 
+            margin: 0; 
+            font-size: 2.8em; 
+            font-family: 'Impact', sans-serif; 
+            letter-spacing: 2px;
+        }
+
+        /* Contenedor de contenido */
+        .container {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            min-height: 400px;
+        }
+
+        /* Fuentes Personalizadas para coincidir con tus capturas */
+        .fuente-titulo { font-family: 'Impact', sans-serif; color: #333; }
+        .fuente-lista { font-family: 'Trebuchet MS', sans-serif; }
+        .fuente-tecnica { font-family: 'Georgia', serif; font-style: italic; }
+
+        /* ESTILOS DE LAS DIVISIONES (Cajas de colores) */
+        .contenedor-divs {
+            display: flex;
+            margin-top: 20px;
+            color: black;
+            font-family: 'Arial', sans-serif;
+        }
+        .caja-londres {
+            background-color: #5f9ea0; /* Azul acero de la captura */
+            padding: 20px;
+            width: 50%;
+        }
+        .caja-valladolid {
+            background-color: #cd5c5c; /* Rojo coral de la captura */
+            padding: 20px;
+            width: 50%;
+        }
+        .caja-londres h3, .caja-valladolid h3 {
+            margin-top: 0;
+            font-size: 2em;
+        }
+
+        /* Pie de página (Mismos datos que index_t3) */
+        footer {
+            background-color: #ff9999;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-pastel">
+        <h1>DIVISIONES</h1>
+    </div>
+
+    <div class="container">
+        <h2 class="fuente-titulo">Html elemento "DIV"</h2>
+        <p class="fuente-lista">El elemento DIV se utiliza como contenedor para otros elementos HTML.</p>
+        <p class="fuente-tecnica">Ejemplo de DIV</p>
+
+        <div class="contenedor-divs">
+            <div class="caja-londres">
+                <h3>Londres</h3>
+                <p>Londres es una ciudad ubicada en el reino unido</p>
+            </div>
+            <div class="caja-valladolid">
+                <h3>Valladolid</h3>
+                <p>Valladolid es una ciudad ubicada en Yucatán</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        ©2026 CONALEP VALLADOLID 105
+    </footer>
+
+</body>
+</html>

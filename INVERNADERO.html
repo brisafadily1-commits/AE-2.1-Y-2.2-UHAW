@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>El Invernadero - Interactivo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            background-color: #2ecc71;
+            font-family: 'Montserrat', sans-serif; 
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-banner {
+            background-image: url("fondobanner.jpg"); 
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 5px solid #1b5e20;
+        }
+
+        .header-banner h2 {
+            color: white;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.6);
+        }
+
+        .contenedor-principal {
+            background-color: white;
+            width: 85%;
+            max-width: 1100px;
+            margin: 20px 0;
+            border: 1px solid #000;
+            min-height: 60vh;
+            box-shadow: 0px 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .navbar {
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #eee;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #e9ecef;
+            color: #1b5e20;
+        }
+
+        .contenido-dinamico {
+            padding: 40px;
+        }
+
+        .titulo-azul {
+            font-family: 'Playfair Display', serif;
+            color: #2980b9;
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .subtitulo-derecha {
+            color: #1a237e;
+            font-weight: bold;
+            text-align: right;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+
+        .seccion { display: none; }
+        .activa { display: block; animation: aparecer 0.6s ease; }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .info-flex { display: flex; gap: 25px; align-items: flex-start; }
+        .img-box { border: 1px solid #ddd; padding: 8px; background-color: #fff; box-shadow: 5px 5px 15px rgba(0,0,0,0.1); }
+        .texto-contenido { line-height: 1.8; color: #444; font-size: 1.05em; text-align: justify; }
+        
+        ul { margin-top: 10px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <h2>elinvernadero.com</h2>
+    </div>
+
+    <div class="contenedor-principal">
+        
+        <div class="navbar">
+            <a onclick="mostrar('inicio')">Inicio</a>
+            <a onclick="mostrar('tipos')">Tipos de plantas</a>
+            <a onclick="mostrar('cuidados')">Briconsejos de jardinería</a>
+            <a onclick="mostrar('oriental')">Zona oriental</a>
+            <a onclick="mostrar('contacto')">Contacto</a>
+        </div>
+
+        <div class="contenido-dinamico">
+            
+            <div id="inicio" class="seccion activa">
+                <p class="titulo-azul">El invernadero, tu web sobre las plantas.</p>
+                <p class="subtitulo-derecha">Todo lo que tienes que saber sobre las plantas.</p>
+                <div class="info-flex">
+                    <div class="img-box"><img src="Historia de los jardines japoneses.jpg" width="350"></div>
+                    <div class="texto-contenido">
+                        <p>Bienvenido a mi web, una web creada por y para los amantes de las plantas, aquí vamos a poder encontrar muchas formas de conocerlas, los tipos de plantas, algunos consejos para el jardín y nuestra sección sobre jardinería japonesa donde descubrirás el mundo de los bonsais, prebonsais y todo hacerca de estas maravillosas miniaturas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="tipos" class="seccion">
+                <p class="titulo-azul">Tipos de Plantas</p>
+                <div class="texto-contenido">
+                    <p>En nuestro invernadero clasificamos las plantas para que sea más fácil cuidarlas:</p>
+                    <ul>
+                        <li><b>Plantas de Exterior:</b> Árboles, arbustos y flores de temporada que aman la luz directa.</li>
+                        <li><b>Plantas de Interior:</b> Helechos, potus y cintas que decoran tu hogar.</li>
+                        <li><b>Suculentas y Cactus:</b> Perfectas para quienes tienen poco tiempo, ya que requieren muy poca agua.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="cuidados" class="seccion">
+                <p class="titulo-azul">Briconsejos de Jardinería</p>
+                <div class="texto-contenido">
+                    <p>Mantener tus plantas sanas es sencillo si sigues estos consejos:</p>
+                    <ul>
+                        <li><b>El riego:</b> Es mejor regar poco pero de forma constante que inundar la maceta una vez por semana.</li>
+                        <li><b>Luz adecuada:</b> No todas las plantas quieren sol directo; algunas prefieren la semisombra para no quemar sus hojas.</li>
+                        <li><b>Limpieza:</b> Limpia el polvo de las hojas grandes con un paño húmedo para que puedan respirar y hacer la fotosíntesis mejor.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="oriental" class="seccion">
+                <p class="titulo-azul">Zona Oriental: El Arte del Bonsái</p>
+                <div class="texto-contenido">
+                    <p>Esta es nuestra sección especial dedicada a la jardinería japonesa. Aquí te enseñamos que un bonsái no es solo una planta pequeña, sino una obra de arte viva que requiere paciencia y técnica.</p>
+                    <p>Podrás aprender sobre:</p>
+                    <ul>
+                        <li><b>Prebonsáis:</b> El primer paso para dar forma a tu futuro árbol.</li>
+                        <li><b>Técnicas de poda:</b> Cómo guiar el crecimiento para mantener la miniatura perfecta.</li>
+                        <li><b>Filosofía:</b> La conexión espiritual entre el cuidador y su bonsái.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="contacto" class="seccion">
+                <p class="titulo-azul">Ponte en Contacto</p>
+                <div class="texto-contenido" style="text-align: center;">
+                    <p>¿Tienes dudas sobre alguna de tus plantas? ¡No dudes en escribirme!</p>
+                    <p>Email: <b>elinvernadero@hotmail.com</b></p>
+                    <p>Te responderé lo más pronto posible para ayudarte con tu jardín.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function mostrar(id) {
+            var secciones = document.getElementsByClassName('seccion');
+            for (var i = 0; i < secciones.length; i++) {
+                secciones[i].classList.remove('activa');
+            }
+            document.getElementById(id).classList.add('activa');
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Makeup Artist | Portfolio</title>
+    <style>
+        /* Estilos Globales */
+        :root {
+            --dorado: #d4af37;
+            --negro: #1a1a1a;
+            --nude: #fdf5f2;
+            --blanco: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background-color: var(--nude);
+            color: var(--negro);
+        }
+
+        header {
+            background-color: var(--blanco);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--dorado);
+        }
+
+        h1 {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0;
+            color: var(--negro);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 400px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Servicios */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px 10%;
+            background: var(--blanco);
+        }
+
+        .service-card {
+            border: 1px solid #eee;
+            padding: 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--dorado);
+            transform: translateY(-5px);
+        }
+
+        .price {
+            color: var(--dorado);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Botón de Contacto */
+        .btn-contact {
+            display: inline-block;
+            background-color: var(--negro);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--negro);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Makeup by Studio</h1>
+        <p>Realzando tu belleza natural</p>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Maquillaje Profesional para Eventos</h2>
+            <p>Novias | Social | Editorial</p>
+            <a href="#contacto" class="btn-contact">Agendar Cita</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="service-card">
+            <h3>Maquillaje Social</h3>
+            <p>Perfecto para fiestas, graduaciones y eventos especiales.</p>
+            <p class="price">$45.00</p>
+        </div>
+        <div class="service-card">
+            <h3>Novias (Bridal)</h3>
+            <p>Incluye prueba de maquillaje y kit de retoque.</p>
+            <p class="price">$120.00</p>
+        </div>
+        <div class="service-card">
+            <h3>Clases de Automaquillaje</h3>
+            <p>Aprende a resaltar tus facciones tú misma.</p>
+            <p class="price">$60.00</p>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <h3>Contacto</h3>
+        <p>📧 email@ejemplo.com</p>
+        <p>📱 +123 456 789</p>
+        <p>Sígueme en Instagram: @TuUsuario</p>
+    </footer>
+
+</body>
+</html>

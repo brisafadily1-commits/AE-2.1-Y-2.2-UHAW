@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Formulario - Brisa Fadily</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* COLOR ROSA PASTEL PARA EL FONDO */
+            background-color: #FAD1E8; 
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            color: #2e7d32; /* Verde para el título */
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+        }
+
+        /* CUADRO DEL FORMULARIO (AZUL CLARO CON BORDES NEGROS) */
+        form {
+            background-color: #ADD8E6; /* Azul claro de la imagen */
+            width: 95%;
+            max-width: 650px;
+            padding: 30px;
+            
+            /* Bordes gruesos y redondeados como los de Kevin */
+            border: 4px solid #000000;
+            border-radius: 20px;
+            
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.1); /* Sombra tipo comic */
+            box-sizing: border-box;
+        }
+
+        /* TEXTOS DE LAS ETIQUETAS */
+        label {
+            color: #1b5e20; /* Verde oscuro */
+            font-weight: bold;
+            display: block;
+            margin-bottom: 8px;
+            margin-top: 15px;
+            font-size: 1.1em;
+        }
+
+        /* CAMPOS DE ENTRADA (INPUTS) */
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"] {
+            width: 100%;
+            padding: 12px;
+            
+            /* Bordes negros y gruesos para cada casilla */
+            border: 3px solid #000000;
+            border-radius: 10px;
+            
+            background-color: #fdfdfd;
+            font-size: 1em;
+            font-family: 'Montserrat', sans-serif;
+            box-sizing: border-box;
+            transition: all 0.3s;
+        }
+
+        /* Efecto al hacer clic en una casilla */
+        input:focus {
+            outline: none;
+            border-color: #2980b9;
+            background-color: #fff;
+        }
+
+        /* SECCIÓN DE SEXO */
+        .opciones-sexo {
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .opciones-sexo label {
+            display: inline;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        /* BOTÓN DE ENVIAR */
+        .btn-enviar {
+            background-color: #2e7d32;
+            color: white;
+            border: 3px solid #000;
+            border-radius: 10px;
+            padding: 15px;
+            width: 100%;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-enviar:hover {
+            background-color: #1b5e20;
+            transform: scale(1.02);
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Formulario</h1>
+
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido">
+
+        <label for="email">Correo electronico:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="telefono">Teléfono:</label>
+        <input type="tel" id="telefono" name="telefono" style="width: 200px;">
+
+        <label>Sexo:</label>
+        <div class="opciones-sexo">
+            <div>
+                <input type="radio" id="h" name="sexo" value="h">
+                <label for="h">Hombre</label>
+            </div>
+            <div>
+                <input type="radio" id="m" name="sexo" value="m">
+                <label for="m">Mujer</label>
+            </div>
+        </div>
+
+        <label for="fecha">Fecha de nacimiento:</label>
+        <input type="date" id="fecha" name="fecha" style="width: 200px;">
+
+        <button type="submit" class="btn-enviar">Registrar Datos</button>
+    </form>
+
+</body>
+</html>

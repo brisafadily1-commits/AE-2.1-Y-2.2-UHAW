@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Juego del Gato vs Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            /* 1. RECUERDA CAMBIAR ESTO POR EL NOMBRE DE TU IMAGEN */
+            background-image: url("fondojuego.jpg"); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #fff;
+            text-shadow: 3px 3px 0px #000;
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .mensaje-juego {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+            background-color: rgba(0,0,0,0.6);
+            padding: 10px 30px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            border: 2px solid #fff;
+            min-width: 250px;
+            text-align: center;
+        }
+
+        .tablero {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px;
+            border: 5px solid #000;
+            border-radius: 20px;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.3);
+            width: 320px;
+        }
+
+        .celda {
+            width: 100px;
+            height: 100px;
+            background-color: #ADD8E6; /* Azul claro */
+            border: 3px solid #000;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 3.5em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .celda:hover { background-color: #fff; transform: scale(1.03); }
+        .celda.x { color: #d32f2f; } /* Jugador (Rojo) */
+        .celda.o { color: #1b5e20; } /* Bot (Verde) */
+
+        button {
+            margin-top: 25px;
+            background-color: #2e7d32;
+            color: white;
+            border: 3px solid #000;
+            padding: 12px 30px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        button:hover { background-color: #1b5e20; transform: translateY(-2px); }
+    </style>
+</head>
+<body>
+
+    <h1>Tú vs Bot</h1>
+    <div class="mensaje-juego" id="mensaje">Tu turno (X)</div>
+    
+    <div class="tablero" id="tablero">
+        <div class="celda" onclick="movimientoJugador(0)"></div>
+        <div class="celda" onclick="movimientoJugador(1)"></div>
+        <div class="celda" onclick="movimientoJugador(2)"></div>
+        <div class="celda" onclick="movimientoJugador(3)"></div>
+        <div class="celda" onclick="movimientoJugador(4)"></div>
+        <div class="celda" onclick="movimientoJugador(5)"></div>
+        <div class="celda" onclick="movimientoJugador(6)"></div>
+        <div class="celda" onclick="movimientoJugador(7)"></div>
+        <div class="celda" onclick="movimientoJugador(8)"></div>
+    </div>
+
+    <button onclick="reiniciar()">Reiniciar Juego</button>
+
+    <script>
+        let tablero = Array(9).fill(null);
+        let juegoActivo = true;
+        const celdas = document.querySelectorAll('.celda');
+        const mensaje = document.getElementById('mensaje');
+
+        const ganarEscenarios = [
+            [0,1,2], [3,4,5], [6,7,8], [0,3,6], [1,4,7], [2,5,8], [0,4,8], [2,4,6]
+        ];
+
+        function movimientoJugador(i) {
+            if (!tablero[i] && juegoActivo) {
+                hacerMovimiento(i, 'X');
+                if (juegoActivo) {
+                    mensaje.innerText = "Pensando...";
+                    setTimeout(movimientoBot, 600);
+                }
+            }
+        }
+
+        function movimientoBot() {
+            if (!juegoActivo) return;
+            let disponibles = tablero.map((val, idx) => val === null ? idx : null).filter(val => val !== null);
+            if (disponibles.length > 0) {
+                let eleccion = disponibles[Math.floor(Math.random() * disponibles.length)];
+                hacerMovimiento(eleccion, 'O');
+                if (juegoActivo) mensaje.innerText = "Tu turno (X)";
+            }
+        }
+
+        function hacerMovimiento(i, jugador) {
+            tablero[i] = jugador;
+            celdas[i].innerText = jugador;
+            celdas[i].classList.add(jugador.toLowerCase());
+            
+            if (revisarGanador()) {
+                mensaje.innerText = (jugador === 'X') ? "¡Ganaste!" : "¡Gano el Bot!";
+                juegoActivo = false;
+            } else if (!tablero.includes(null)) {
+                mensaje.innerText = "¡Empate!";
+                juegoActivo = false;
+            }
+        }
+
+        function revisarGanador() {
+            return ganarEscenarios.some(combinacion => {
+                return combinacion.every(index => tablero[index] && tablero[index] === tablero[combinacion[0]]);
+            });
+        }
+
+        function reiniciar() {
+            tablero = Array(9).fill(null);
+            juegoActivo = true;
+            mensaje.innerText = "Tu turno (X)";
+            celdas.forEach(c => {
+                c.innerText = "";
+                c.classList.remove('x', 'o');
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Formulario Pastel</title>
+    <style>
+        body { 
+            background-color: #E1F5FE; /* Azul muy claro pastel */
+            font-family: 'Verdana', sans-serif; 
+            padding: 20px;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #E0F2F1; /* Fondo de la parte derecha */
+        }
+
+        /* Encabezado y Pie de página (Rosa vibrante como tu foto) */
+        .header, .footer {
+            background-color: #FF00FF; 
+            color: black;
+            text-align: center;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* Etiquetas de la izquierda (Verde limón pastel) */
+        .etiqueta {
+            background-color: #D4E157;
+            font-weight: bold;
+            padding: 10px;
+            width: 40%;
+            border: 1px solid white;
+        }
+
+        /* Espacio de entrada de la derecha */
+        .entrada {
+            padding: 10px;
+            border: 1px solid white;
+        }
+
+        input[type="text"], select, textarea {
+            width: 90%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .botones {
+            text-align: center;
+            padding: 10px;
+        }
+
+        input[type="submit"], input[type="reset"] {
+            padding: 5px 15px;
+            cursor: pointer;
+            font-family: 'Verdana', sans-serif;
+        }
+    </style>
+</head>
+<body>
+
+    <form>
+        <table>
+            <tr>
+                <td colspan="2" class="header">Por favor, rellena estos datos</td>
+            </tr>
+
+            <tr>
+                <td class="etiqueta">Nombre completo:</td>
+                <td class="entrada"><input type="text" name="nombre"></td>
+            </tr>
+            <tr>
+                <td class="etiqueta">Ciudad:</td>
+                <td class="entrada"><input type="text" name="ciudad"></td>
+            </tr>
+            <tr>
+                <td class="etiqueta">Correo electrónico:</td>
+                <td class="entrada"><input type="text" name="correo"></td>
+            </tr>
+
+            <tr>
+                <td class="etiqueta">¿Te gusta la programación?</td>
+                <td class="entrada">
+                    <input type="radio" name="gusta" value="si"> Sí 
+                    <input type="radio" name="gusta" value="no"> No
+                </td>
+            </tr>
+
+            <tr>
+                <td class="etiqueta">Hobby favorito:</td>
+                <td class="entrada">
+                    <input type="checkbox" name="hobby" value="musica"> Música 
+                    <input type="checkbox" name="hobby" value="deporte"> Deporte 
+                    <input type="checkbox" name="hobby" value="leer"> Leer
+                </td>
+            </tr>
+
+            <tr>
+                <td class="etiqueta">Elige un postre:</td>
+                <td class="entrada">
+                    <select name="postre">
+                        <option value="helado">Helado</option>
+                        <option value="pastel">Pastel</option>
+                        <option value="fruta">Fruta</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="etiqueta">¿Algún mensaje para Brisa?</td>
+                <td class="entrada">
+                    <textarea name="comentario" rows="6"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="footer">
+                    <input type="submit" value="enviar">
+                    <input type="reset" value="borrar">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

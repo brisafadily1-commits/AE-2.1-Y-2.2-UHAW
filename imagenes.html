@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Imágenes - Libreta de Tecnología</title>
+    <style>
+        /* Estilos Base */
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: white; color: #333; }
+
+        /* Banner Rojo Pastel (Igual al index_t3) */
+        .header-pastel {
+            background-color: #ff9999;
+            color: white;
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid #ff8080;
+        }
+        .header-pastel h1 { 
+            margin: 0; 
+            font-size: 2.8em; 
+            font-family: 'Impact', sans-serif; 
+            letter-spacing: 2px;
+        }
+
+        /* Contenedor de contenido */
+        .container {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+            min-height: 450px;
+        }
+
+        /* Fuentes Personalizadas del index_t3 */
+        .fuente-titulo { font-family: 'Impact', sans-serif; color: #333; }
+        .fuente-nombre { font-family: 'Courier New', monospace; font-weight: bold; font-size: 1.5em; color: #ff8080; }
+        .fuente-tecnica { font-family: 'Georgia', serif; font-style: italic; }
+        .fuente-lista { font-family: 'Trebuchet MS', sans-serif; }
+
+        /* Estilo para imágenes */
+        .conalep-img { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 20px 0; 
+            display: block; 
+            border: 2px solid #ff9999; 
+            border-radius: 10px;
+        }
+
+        /* Bloque de código para SRC y ALT */
+        .bloque-codigo {
+            font-family: 'Courier New', monospace;
+            background: #f0f0f0;
+            padding: 15px;
+            border-left: 5px solid #ff9999;
+            margin: 20px 0;
+        }
+
+        /* Pie de página (Mismos datos) */
+        footer {
+            background-color: #ff9999;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-pastel">
+        <h1>IMAGENES</h1>
+    </div>
+
+    <div class="container">
+        <h1 class="fuente-titulo">Sintaxis de imagenes HTML</h1>
+        <p class="fuente-lista">El elemento <b>IMG</b> sirve para colocar imagenes en una pagina web.</p>
+        <p class="fuente-tecnica">Las imagenes no se insertan en una pagina web sino que las imagenes estan siendo vinculadas atraves de un enlace.</p>
+        <p class="fuente-lista">La etiqueta <b>IMG</b> esta vacia, solo contiene atributos y no tiene una etiqueta de cierre.</p>
+        
+        <p>La etiqueta <b>IMG</b> tiene dos atributos principales:</p>
+        
+        <div class="bloque-codigo">
+            <b>SRC:</b> Especifica la ruta de la imagen<br>
+            <b>ALT:</b> Especifica el texto alternativo de la imagen
+        </div>
+
+        <img src="logoConalep.jpg" alt="Logo Conalep Yucatán" class="conalep-img">
+
+        <h1 class="fuente-titulo">Tamaño de la imagen-Ancho y altura</h1>
+        <p class="fuente-tecnica">Puedes usar <b>STYLE</b> atributo para especificar el ancho y altura de la imagen.</p>
+        
+        <img src="imagenIndex.jpg" alt="Ejemplo de Tamaño" class="conalep-img">
+    </div>
+
+    <footer>
+        ©2026 CONALEP VALLADOLID 105
+    </footer>
+
+</body>
+</html>
